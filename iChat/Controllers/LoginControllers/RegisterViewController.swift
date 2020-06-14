@@ -197,7 +197,7 @@ class RegisterViewController: UIViewController {
             Auth.auth().createUser(withEmail: email, password: password) {[weak self] (authResult, error) in
                 guard let self = self else { return }
                 guard authResult != nil, error == nil else {
-                    print("Error creating account")
+                    print("Error creating account: \(error!.localizedDescription)")
                     return
                 }
                 

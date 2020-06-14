@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,8 @@
 		2462787F24954622000FED0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462787E24954622000FED0A /* Extensions.swift */; };
 		246278812495B0B3000FED0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 246278802495B0B2000FED0A /* GoogleService-Info.plist */; };
 		2462788324963AD4000FED0A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462788224963AD4000FED0A /* DatabaseManager.swift */; };
+		2462788524965EB1000FED0A /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462788424965EB1000FED0A /* MainTabBar.swift */; };
+		2462788824966E02000FED0A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2462788724966E02000FED0A /* SnapKit */; };
 		E7F6C577F5B50C6F04067D9D /* Pods_iChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDB4CF1DF2DA52CC83ADD90 /* Pods_iChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,7 @@
 		2462787E24954622000FED0A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		246278802495B0B2000FED0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2462788224963AD4000FED0A /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		2462788424965EB1000FED0A /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		9711319361B8E8ACE01EC8FA /* Pods-iChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChat.release.xcconfig"; path = "Target Support Files/Pods-iChat/Pods-iChat.release.xcconfig"; sourceTree = "<group>"; };
 		DFDB4CF1DF2DA52CC83ADD90 /* Pods_iChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -52,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7F6C577F5B50C6F04067D9D /* Pods_iChat.framework in Frameworks */,
+				2462788824966E02000FED0A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +98,7 @@
 		2462786A249534F8000FED0A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2462788424965EB1000FED0A /* MainTabBar.swift */,
 				2462787D24954231000FED0A /* LoginControllers */,
 				2462785A24953366000FED0A /* ConversationViewController.swift */,
 				2462787524953936000FED0A /* PhotoViewerViewController.swift */,
@@ -175,12 +180,16 @@
 				2462785024953366000FED0A /* Frameworks */,
 				2462785124953366000FED0A /* Resources */,
 				D5BC3AD6ED30439717F1F23F /* [CP] Embed Pods Frameworks */,
+				B69B6B602EE97DBBE2E78FCC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = iChat;
+			packageProductDependencies = (
+				2462788724966E02000FED0A /* SnapKit */,
+			);
 			productName = iChat;
 			productReference = 2462785324953366000FED0A /* iChat.app */;
 			productType = "com.apple.product-type.application";
@@ -209,6 +218,9 @@
 				Base,
 			);
 			mainGroup = 2462784A24953366000FED0A;
+			packageReferences = (
+				2462788624966E02000FED0A /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 2462785424953366000FED0A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -254,6 +266,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B69B6B602EE97DBBE2E78FCC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iChat/Pods-iChat-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iChat/Pods-iChat-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iChat/Pods-iChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D5BC3AD6ED30439717F1F23F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -278,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2462788524965EB1000FED0A /* MainTabBar.swift in Sources */,
 				246278722495389E000FED0A /* LoginViewController.swift in Sources */,
 				2462788324963AD4000FED0A /* DatabaseManager.swift in Sources */,
 				246278782495394D000FED0A /* VideoViewerViewController.swift in Sources */,
@@ -482,6 +512,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2462788624966E02000FED0A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2462788724966E02000FED0A /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2462788624966E02000FED0A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2462784B24953366000FED0A /* Project object */;
 }
