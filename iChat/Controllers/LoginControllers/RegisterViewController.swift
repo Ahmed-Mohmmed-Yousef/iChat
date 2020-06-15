@@ -8,7 +8,12 @@
 
 import UIKit
 import FirebaseAuth
+import JGProgressHUD
+
 class RegisterViewController: UIViewController {
+    
+    private lazy var spinner = JGProgressHUD(style: .dark)
+
 
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -187,15 +192,20 @@ class RegisterViewController: UIViewController {
                 return
         }
         // firebase new account
-        
+        spinner.show(in: view)
         DatabaseManager.shared.userExists(with: email) {[weak self] (exist) in
+            guard let self = self else { return }
             guard !exist else {
-                self?.alertUserLoginError(message: "this account is already exists")
+                self.alertUserLoginError(message: "this account is already exists")
                 return
             }
             
-            Auth.auth().createUser(withEmail: email, password: password) {[weak self] (authResult, error) in
-                guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.spinner.dismiss()
+            }
+            
+            Auth.auth().createUser(withEmail: email, password: password) {(authResult, error) in
+                
                 guard authResult != nil, error == nil else {
                     print("Error creating account: \(error!.localizedDescription)")
                     return

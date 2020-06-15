@@ -16,13 +16,16 @@
 		2462787424953920000FED0A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462787324953920000FED0A /* RegisterViewController.swift */; };
 		2462787624953936000FED0A /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462787524953936000FED0A /* PhotoViewerViewController.swift */; };
 		246278782495394D000FED0A /* VideoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246278772495394D000FED0A /* VideoViewerViewController.swift */; };
-		2462787A2495395A000FED0A /* VewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246278792495395A000FED0A /* VewConversationViewController.swift */; };
+		2462787A2495395A000FED0A /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246278792495395A000FED0A /* NewConversationViewController.swift */; };
 		2462787C24953978000FED0A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462787B24953978000FED0A /* ProfileViewController.swift */; };
 		2462787F24954622000FED0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462787E24954622000FED0A /* Extensions.swift */; };
 		246278812495B0B3000FED0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 246278802495B0B2000FED0A /* GoogleService-Info.plist */; };
 		2462788324963AD4000FED0A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462788224963AD4000FED0A /* DatabaseManager.swift */; };
 		2462788524965EB1000FED0A /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462788424965EB1000FED0A /* MainTabBar.swift */; };
 		2462788824966E02000FED0A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2462788724966E02000FED0A /* SnapKit */; };
+		2462788A2496F44A000FED0A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246278892496F44A000FED0A /* ChatViewController.swift */; };
+		2462788C2496F925000FED0A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462788B2496F925000FED0A /* Message.swift */; };
+		2462788E2496F9A6000FED0A /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462788D2496F9A6000FED0A /* Sender.swift */; };
 		E7F6C577F5B50C6F04067D9D /* Pods_iChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDB4CF1DF2DA52CC83ADD90 /* Pods_iChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,12 +42,15 @@
 		2462787324953920000FED0A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2462787524953936000FED0A /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
 		246278772495394D000FED0A /* VideoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewerViewController.swift; sourceTree = "<group>"; };
-		246278792495395A000FED0A /* VewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VewConversationViewController.swift; sourceTree = "<group>"; };
+		246278792495395A000FED0A /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		2462787B24953978000FED0A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2462787E24954622000FED0A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		246278802495B0B2000FED0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2462788224963AD4000FED0A /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		2462788424965EB1000FED0A /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		246278892496F44A000FED0A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		2462788B2496F925000FED0A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		2462788D2496F9A6000FED0A /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 		9711319361B8E8ACE01EC8FA /* Pods-iChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChat.release.xcconfig"; path = "Target Support Files/Pods-iChat/Pods-iChat.release.xcconfig"; sourceTree = "<group>"; };
 		DFDB4CF1DF2DA52CC83ADD90 /* Pods_iChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -101,9 +107,10 @@
 				2462788424965EB1000FED0A /* MainTabBar.swift */,
 				2462787D24954231000FED0A /* LoginControllers */,
 				2462785A24953366000FED0A /* ConversationViewController.swift */,
+				246278892496F44A000FED0A /* ChatViewController.swift */,
 				2462787524953936000FED0A /* PhotoViewerViewController.swift */,
 				246278772495394D000FED0A /* VideoViewerViewController.swift */,
-				246278792495395A000FED0A /* VewConversationViewController.swift */,
+				246278792495395A000FED0A /* NewConversationViewController.swift */,
 				2462787B24953978000FED0A /* ProfileViewController.swift */,
 			);
 			path = Controllers;
@@ -119,6 +126,8 @@
 		2462786C24953508000FED0A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2462788B2496F925000FED0A /* Message.swift */,
+				2462788D2496F9A6000FED0A /* Sender.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,14 +320,17 @@
 				246278722495389E000FED0A /* LoginViewController.swift in Sources */,
 				2462788324963AD4000FED0A /* DatabaseManager.swift in Sources */,
 				246278782495394D000FED0A /* VideoViewerViewController.swift in Sources */,
+				2462788E2496F9A6000FED0A /* Sender.swift in Sources */,
 				2462787F24954622000FED0A /* Extensions.swift in Sources */,
-				2462787A2495395A000FED0A /* VewConversationViewController.swift in Sources */,
+				2462787A2495395A000FED0A /* NewConversationViewController.swift in Sources */,
 				2462787424953920000FED0A /* RegisterViewController.swift in Sources */,
 				2462785B24953366000FED0A /* ConversationViewController.swift in Sources */,
 				2462785724953366000FED0A /* AppDelegate.swift in Sources */,
+				2462788A2496F44A000FED0A /* ChatViewController.swift in Sources */,
 				2462787C24953978000FED0A /* ProfileViewController.swift in Sources */,
 				2462785924953366000FED0A /* SceneDelegate.swift in Sources */,
 				2462787624953936000FED0A /* PhotoViewerViewController.swift in Sources */,
+				2462788C2496F925000FED0A /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
