@@ -210,10 +210,28 @@ class RegisterViewController: UIViewController {
                     print("Error creating account: \(error!.localizedDescription)")
                     return
                 }
-                
-                DatabaseManager.shared.insertUser(with: ChatAppUser(firsName: firstName,
-                                                                    lastName: lastName,
-                                                                    emailAdress: email))
+                let chatUser = ChatUser(firsName: firstName,
+                                           lastName: lastName,
+                                           emailAdress: email)
+                DatabaseManager.shared.insertUser(with: chatUser) { success in
+                    if success {
+                        // upload image
+                        guard let image = self.imageView.image, let data = image.pngData() else {
+                            return
+                        }
+                        let fileName = chatUser.profilePictureFileName
+                        StorageManeger.shared.uploadProfilePicture(with: data, fileName: fileName) { result in
+                            switch result {
+                                
+                            case .success(let downLoadedURL):
+                                UserDefaults.standard.set(downLoadedURL, forKey: "profile_picture_url")
+                                print(downLoadedURL)
+                            case .failure(let error):
+                                print("Storage Maneger Error ",error.localizedDescription)
+                            }
+                        }
+                    }
+                }
                 self.navigationController?.dismiss(animated: true)
 
             }

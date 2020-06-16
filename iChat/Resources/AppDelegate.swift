@@ -56,9 +56,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
         DatabaseManager.shared.userExists(with: email) { (exist) in
             if !exist {
-                DatabaseManager.shared.insertUser(with: ChatAppUser(firsName: firstName,
-                                                                    lastName: lastName,
-                                                                    emailAdress: email))
+                let chatUser = ChatUser(firsName: firstName,
+                                           lastName: lastName,
+                                           emailAdress: email)
+                DatabaseManager.shared.insertUser(with: chatUser) { success in
+                    if success {
+                        // upload image
+                        if user.profile.hasImage {
+                            guard let url = user.profile.imageURL(withDimension: 200) else {
+                                return
+                            }
+                            print(url)
+                            URLSession.shared.dataTask(with: url) { (data, _, error) in
+                                guard let data = data, error == nil else {
+                                    print("Cant Download data from googlt: \(error!.localizedDescription)")
+                                    return
+                                }
+                                print("got data from google, uploading data ")
+                                // upload image
+                                let fileName = chatUser.profilePictureFileName
+                                StorageManeger.shared.uploadProfilePicture(with: data, fileName: fileName) { result in
+                                    switch result {
+                                        
+                                    case .success(let downLoadedURL):
+                                        UserDefaults.standard.set(downLoadedURL, forKey: "profile_picture_url")
+                                        print(downLoadedURL)
+                                    case .failure(let error):
+                                        print("Storage Maneger Error ",error.localizedDescription)
+                                    }
+                                }
+                                
+                            }.resume()
+                        }
+                    }
+                }
             }
         }
 

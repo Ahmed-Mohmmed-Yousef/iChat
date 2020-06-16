@@ -26,6 +26,7 @@
 		2462788A2496F44A000FED0A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246278892496F44A000FED0A /* ChatViewController.swift */; };
 		2462788C2496F925000FED0A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462788B2496F925000FED0A /* Message.swift */; };
 		2462788E2496F9A6000FED0A /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462788D2496F9A6000FED0A /* Sender.swift */; };
+		248B7AD62498249100B85E32 /* StorageManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248B7AD52498249100B85E32 /* StorageManeger.swift */; };
 		E7F6C577F5B50C6F04067D9D /* Pods_iChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDB4CF1DF2DA52CC83ADD90 /* Pods_iChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		246278892496F44A000FED0A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		2462788B2496F925000FED0A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2462788D2496F9A6000FED0A /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		248B7AD52498249100B85E32 /* StorageManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManeger.swift; sourceTree = "<group>"; };
 		9711319361B8E8ACE01EC8FA /* Pods-iChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChat.release.xcconfig"; path = "Target Support Files/Pods-iChat/Pods-iChat.release.xcconfig"; sourceTree = "<group>"; };
 		DFDB4CF1DF2DA52CC83ADD90 /* Pods_iChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -147,6 +149,7 @@
 				2462785F2495336A000FED0A /* Assets.xcassets */,
 				2462787E24954622000FED0A /* Extensions.swift */,
 				2462788224963AD4000FED0A /* DatabaseManager.swift */,
+				248B7AD52498249100B85E32 /* StorageManeger.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				2462788524965EB1000FED0A /* MainTabBar.swift in Sources */,
 				246278722495389E000FED0A /* LoginViewController.swift in Sources */,
 				2462788324963AD4000FED0A /* DatabaseManager.swift in Sources */,
+				248B7AD62498249100B85E32 /* StorageManeger.swift in Sources */,
 				246278782495394D000FED0A /* VideoViewerViewController.swift in Sources */,
 				2462788E2496F9A6000FED0A /* Sender.swift in Sources */,
 				2462787F24954622000FED0A /* Extensions.swift in Sources */,
